@@ -28,21 +28,21 @@ function App() {
 export default App;
 
 function Header({ title }) {
-  return <header>{title}</header>;
+  return <header>{title.toUpperCase()}</header>;
 }
 
 function NavBar({ handleNavBarClick }) {
   function handleHomeClick() {
-    handleNavBarClick("HOME");
+    handleNavBarClick("home");
   }
   function handleFavoritesClick() {
-    handleNavBarClick("FAVORITES");
+    handleNavBarClick("favorites");
   }
   function handleSettingsClick() {
-    handleNavBarClick("SETTINGS");
+    handleNavBarClick("settings");
   }
   function handleProfileClick() {
-    handleNavBarClick("PROFILE");
+    handleNavBarClick("profile");
   }
 
   return (
@@ -75,7 +75,7 @@ function YouGottaBeKiddingMeDiv({ handleTitleChange }) {
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
-    const formInput = form.name.value.toUpperCase();
+    const formInput = form.name.value;
     handleTitleChange(formInput);
   }
   return (
